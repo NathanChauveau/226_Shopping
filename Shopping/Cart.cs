@@ -11,19 +11,36 @@ namespace Shopping
         #region public methods
         public void Add(List<Article> articles)
         {
-            throw new NotImplementedException();
+            _articles.AddRange(articles);
         }
 
         public List<Article> Remove(List<Article>? articles = null)
         {
-            throw new NotImplementedException();
+           /* if (articles != null)
+            {
+                foreach (var article in articles)
+                {
+                    _articles.Remove(article);
+                }
+            }
+            else
+            {
+                throw new Exception();
+            }
+            return _articles;
+        */
+         List<Article> temparticle = new   List<Article>();
+            temparticle.AddRange(_articles);
+            _articles.Clear();
+            return temparticle;
+        
         }
 
         public List<Article> Articles
         {
             get
             {
-                throw new NotImplementedException();
+                return _articles;
             }
         }
         #endregion public methods
