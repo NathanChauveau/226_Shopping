@@ -34,16 +34,12 @@ namespace Shopping
             {
                 temparticle.AddRange(_articles);
                 _articles.Clear();
-
             }
             else
             {
                 _articles.Remove(_articles.Last());
             }
-    
-
             return temparticle;
-        
         }
 
         public List<Article> Articles
