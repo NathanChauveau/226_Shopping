@@ -15,7 +15,18 @@
 
         public List<Article> Remove(Boolean empty = false)
         {
-            throw new NotImplementedException();
+            List<Article> articlesReadyToCheckout = new List<Article>();
+            if (empty == true)
+            {
+                articlesReadyToCheckout.AddRange(_articles);
+                _articles.Clear();
+            }
+            else
+            {
+                articlesReadyToCheckout.Add(_articles.Last());
+                _articles.Remove(_articles.Last());
+            }
+            return articlesReadyToCheckout;
         }
 
         public List<Article> Articles
