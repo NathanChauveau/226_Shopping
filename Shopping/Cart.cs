@@ -16,22 +16,32 @@ namespace Shopping
 
         public List<Article> Remove(Boolean empty = false)
         {
-           /* if (articles != null)
+            /* if (articles != null)
+             {
+                 foreach (var article in articles)
+                 {
+                     _articles.Remove(article);
+                 }
+             }
+             else
+             {
+                 throw new Exception();
+             }
+             return _articles;
+         */
+            List<Article> temparticle = new List<Article>();
+            if (empty == false)
             {
-                foreach (var article in articles)
-                {
-                    _articles.Remove(article);
-                }
+                temparticle.AddRange(_articles);
+                _articles.Clear();
+
             }
             else
             {
-                throw new Exception();
+                _articles.Remove(_articles.Last());
             }
-            return _articles;
-        */
-         List<Article> temparticle = new   List<Article>();
-            temparticle.AddRange(_articles);
-            _articles.Clear();
+    
+
             return temparticle;
         
         }
