@@ -5,7 +5,6 @@
         #region private attributes
         private List<Article> _articles = new List<Article>();
 
-        public List<Article> Articles => throw new NotImplementedException();
 
         public void Add(List<Article> articles)
         {
@@ -27,6 +26,14 @@
             }
             return articlesReadyToCheckout;
         }
+        public List<Article> Articles
+        {
+            get
+            {
+                return _articles;
+            }
+        }
+
         #endregion private attributes
     }
 }
