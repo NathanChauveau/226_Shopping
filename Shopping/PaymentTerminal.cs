@@ -16,17 +16,17 @@
 
         public void Cash(float balance)
         {
-            throw new NotImplementedException();
+           
         }
 
         public void InsertCard(CreditCard creditCard)
         {
-            throw new NotImplementedException();
+            CreditCard = creditCard;
         }
 
         public void RemoveCard()
         {
-            throw new NotImplementedException();
+            CreditCard = null;
         }
         #endregion public methods
     }

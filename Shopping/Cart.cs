@@ -1,4 +1,5 @@
 ﻿using System.Net.Http.Headers;
+using System.Runtime.CompilerServices;
 
 namespace Shopping
 {
@@ -6,6 +7,7 @@ namespace Shopping
     {
         #region private attributes
         private List<Article> _articles = new List<Article>();
+        private bool _released = false;
         #endregion private attributes
 
         #region public methods
@@ -32,7 +34,7 @@ namespace Shopping
 
         public void Release()
         {
-            throw new NotImplementedException();
+            _released = true;
         }
 
         public List<Article> Articles
@@ -43,7 +45,13 @@ namespace Shopping
             }
         }
 
-        public bool? IsReleased { get; set; }
+        public bool? IsReleased
+        {
+            get
+            {
+                return _released;
+            }
+        }
         #endregion public methods
     }
 }

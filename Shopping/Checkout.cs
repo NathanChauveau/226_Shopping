@@ -11,6 +11,7 @@
         public void Add(List<Article> articles)
         {
             _articles.AddRange(articles);
+            UpdateBalance();
         }
 
         public List<Article> Remove(Boolean empty = false)
@@ -47,7 +48,7 @@
 
         public void StartCashingProcess()
         {
-            throw new NotImplementedException();
+            _balance = 0f;
         }
         #endregion public methods
 
@@ -55,7 +56,10 @@
         private void UpdateBalance()
         {
             {
-                throw new NotImplementedException();
+                foreach (Article article in _articles)
+                {
+                    _balance = _balance + article.Price;
+                }
             }
         }
         #endregion private methods
