@@ -17,7 +17,7 @@ namespace Shopping
         public List<Article> Remove(Boolean clearCart = false)
         {
             List<Article> articlesReadyToCheckout = new List<Article>();
-            if (clearCart == true) 
+            if (clearCart) 
             {         
                 articlesReadyToCheckout.AddRange(_articles);
                 _articles.Clear();
@@ -30,6 +30,11 @@ namespace Shopping
             return articlesReadyToCheckout;
         }
 
+        public void Release()
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Article> Articles
         {
             get
@@ -37,6 +42,8 @@ namespace Shopping
                 return _articles;
             }
         }
+
+        public bool? IsReleased { get; set; }
         #endregion public methods
     }
 }
